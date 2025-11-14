@@ -14,11 +14,11 @@ void URRBaseLidarComponent::BeginPlay()
     Super::BeginPlay();
     if (!PositionNoise)
     {
-        PositionNoise = NewObject<URRGaussianNoise>(this, *FString::Printf(TEXT("%PositionNoise"), *GetName()));
+        PositionNoise = NewObject<URRGaussianNoise>(this, *FString::Printf(TEXT("%sPositionNoise"), *GetName()));
     }
     if (!IntensityNoise)
     {
-        IntensityNoise = NewObject<URRGaussianNoise>(this, *FString::Printf(TEXT("%IntensityNoise"), *GetName()));
+        IntensityNoise = NewObject<URRGaussianNoise>(this, *FString::Printf(TEXT("%sIntensityNoise"), *GetName()));
     }
     PositionNoise->Init(PositionalNoiseMean, PositionalNoiseVariance);
     IntensityNoise->Init(IntensityNoiseMean, IntensityNoiseVariance);

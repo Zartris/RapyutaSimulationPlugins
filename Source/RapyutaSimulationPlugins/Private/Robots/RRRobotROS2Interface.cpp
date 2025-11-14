@@ -275,6 +275,7 @@ void URRRobotROS2Interface::JointCmdCallback(const UROS2GenericMsg* Msg)
                                  Warning,
                                  TEXT("[%s] Supports only single DOF joint. %s has %d "
                                       "linear DOF and %d rotational DOF"),
+                                 *GetName(),
                                  *jointState.Name[i],
                                  Robot->Joints[jointState.Name[i]]->LinearDOF,
                                  Robot->Joints[jointState.Name[i]]->RotationalDOF);

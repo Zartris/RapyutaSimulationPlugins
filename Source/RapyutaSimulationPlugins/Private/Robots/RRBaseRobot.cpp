@@ -453,7 +453,7 @@ void ARRBaseRobot::SetJointState(const TMap<FString, TArray<float>>& InJointStat
         else
         {
             UE_LOG_WITH_INFO_NAMED(
-                LogRapyutaCore, Warning, TEXT("[%s] [ARRBaseRobot] [SetJointState] do not have joint named %s "), *joint.Key);
+                LogRapyutaCore, Warning, TEXT("[%s] [ARRBaseRobot] [SetJointState] do not have joint named %s "), *GetName(), *joint.Key);
         }
     }
 }

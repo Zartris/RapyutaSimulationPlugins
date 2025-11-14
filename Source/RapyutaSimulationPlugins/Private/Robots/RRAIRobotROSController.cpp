@@ -447,7 +447,7 @@ void ARRAIRobotROSController::SetModeCallback(const UROS2GenericMsg* Msg)
         }
         else
         {
-            UE_LOG_WITH_INFO_NAMED(LogRapyutaCore, Warning, TEXT("invalid mode value %d are given."));
+            UE_LOG_WITH_INFO_NAMED(LogRapyutaCore, Warning, TEXT("invalid mode value %d are given."), intData);
         }
     }
 }

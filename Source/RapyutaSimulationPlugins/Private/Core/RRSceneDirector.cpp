@@ -57,7 +57,7 @@ void ARRSceneDirector::TryInitializeOperation()
         {
             UE_LOG_WITH_INFO(LogRapyutaCore,
                              Error,
-                             TEXT("SCENE FAILED INITIALIZING! - TIMEOUT IS [%lf] secs"),
+                             TEXT("SCENE FAILED INITIALIZING! - TIMEOUT IS [%d] secs"),
                              ARRGameMode::SIM_START_TIMEOUT_SECS);
             EndSceneInstance();
         }

@@ -10,10 +10,12 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Engine/ObjectLibrary.h"
 #include "Engine/StaticMesh.h"
+#include "HAL/FileManager.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Materials/Material.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "UObject/Package.h"
+#include "UObject/PackageFileSummary.h"
 #include "UObject/SavePackage.h"
 
 #if WITH_EDITOR

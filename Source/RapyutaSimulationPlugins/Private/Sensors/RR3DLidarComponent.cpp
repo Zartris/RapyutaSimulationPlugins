@@ -166,7 +166,7 @@ void URR3DLidarComponent::SensorUpdate()
 
     // need to store on a structure associating hits with time?
     // GetROS2Data needs to get all data since the last Get? or the last within the last time interval?
-    ULineBatchComponent* const LineBatcher = GetWorld()->PersistentLineBatcher;
+    ULineBatchComponent* const LineBatcher = GetWorld()->GetLineBatcher(UWorld::ELineBatcherType::WorldPersistent);
 
     if (LineBatcher != nullptr && bShowLidarRays)
     {

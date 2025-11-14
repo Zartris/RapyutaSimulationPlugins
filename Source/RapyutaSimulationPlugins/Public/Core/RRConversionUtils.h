@@ -10,6 +10,9 @@
 
 #pragma once
 
+// Standard library
+#include <type_traits>
+
 // rclUE
 #include "Msgs/ROS2HitResult.h"
 #include "Msgs/ROS2Odom.h"
@@ -321,11 +324,11 @@ public:
         {
             return FString(InValue);
         }
-        else if constexpr (TIsSame<T, FName>::Value || TIsSame<T, FText>::Value)
+        else if constexpr (std::is_same_v<T, FName> || std::is_same_v<T, FText>)
         {
             return InValue.ToString();
         }
-        else if constexpr (TIsSame<T, FString>::Value)
+        else if constexpr (std::is_same_v<T, FString>)
         {
             return InValue;
         }

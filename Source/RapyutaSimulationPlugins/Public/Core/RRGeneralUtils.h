@@ -7,6 +7,8 @@
 #pragma once
 
 // UE
+#include "Components/PrimitiveComponent.h"
+#include "Engine/Engine.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
 #include "Json.h"

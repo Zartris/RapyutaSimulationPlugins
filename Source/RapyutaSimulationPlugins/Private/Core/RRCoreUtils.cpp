@@ -306,7 +306,7 @@ UTexture2D* URRCoreUtils::LoadImageToTexture(const FString& InFullFilePath, cons
 {
     if (InTextureName.IsEmpty())
     {
-        UE_LOG_WITH_INFO_SHORT(LogRapyutaCore, Error, TEXT("Image path [%s] - InTextureName is empty"));
+        UE_LOG_WITH_INFO_SHORT(LogRapyutaCore, Error, TEXT("Image path [%s] - InTextureName is empty"), *InFullFilePath);
         return nullptr;
     }
 

@@ -260,7 +260,7 @@ ARRBaseActor* URRUObjectUtils::SpawnSimActor(UWorld* InWorld,
     {
         UE_LOG_WITH_INFO(LogRapyutaCore,
                          Error,
-                         TEXT("SceneInstance[%d] Failed spawning actor [%s] of model [%d] as class[%s]"),
+                         TEXT("SceneInstance[%d] Failed spawning actor [%s] of model [%s] as class[%s]"),
                          InSceneInstanceId,
                          *InActorName,
                          *InEntityModelName,
