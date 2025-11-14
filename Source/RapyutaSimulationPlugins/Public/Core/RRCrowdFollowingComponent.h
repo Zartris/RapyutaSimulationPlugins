@@ -30,7 +30,7 @@ public:
 
     bool IsIdle() const
     {
-        return (EPathFollowingStatus::Idle == Status);
+        return (EPathFollowingStatus::Idle == GetStatus());
     }
 
     bool IsReadyForNewMovementOrder() const

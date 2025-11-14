@@ -121,7 +121,7 @@ void URRPakLoader::MountPAKFiles(const TArray<FString>& InPAKPaths, bool bInForc
         // -> THUS STARTING FROM PACKAGE DIR, THEY MUST BE EXACTLY THE SAME AS IN THE PROJECT DIR WHEN BEING PACKED.(*)
         // EG: <PackageDir>/Plugins/<PluginDir>/Content/DynamicContents/<ResourceTypeDir>/<ResourceFile>
         TArray<FString> pakContentPathList;
-        pakFile.FindPrunedFilesAtPath(pakContentPathList, *pakFile.GetMountPoint(), true, false, true);
+        pakFile.FindPrunedFilesAtPath(*pakFile.GetMountPoint(), pakContentPathList, true, false, true);
         UE_LOG(LogRapyutaCore, Display, TEXT("[%s] has been mounted to files:"), *sourcePakPath);
         for (const auto& resourceMountedPath : pakContentPathList)
         {

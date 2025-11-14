@@ -64,7 +64,7 @@ public:
             nullptr,
             *FString::Printf(
                 TEXT("/Script/%s.%s"), InModuleName ? InModuleName : RAPYUTA_SIMULATION_PLUGINS_MODULE_NAME, *InTypeName),
-            true);
+            EFindObjectFlags::ExactClass);
         if (!EnumPtr)
         {
             return "Invalid";
@@ -80,7 +80,7 @@ public:
             nullptr,
             *FString::Printf(
                 TEXT("/Script/%s.%s"), InModuleName ? InModuleName : RAPYUTA_SIMULATION_PLUGINS_MODULE_NAME, *InTypeName),
-            true);
+            EFindObjectFlags::ExactClass);
         if (!EnumPtr)
         {
             return "Invalid";
@@ -97,7 +97,7 @@ public:
             nullptr,
             *FString::Printf(
                 TEXT("/Script/%s.%s"), InModuleName ? InModuleName : RAPYUTA_SIMULATION_PLUGINS_MODULE_NAME, *InTypeName),
-            true);
+            EFindObjectFlags::ExactClass);
         if (!EnumPtr)
         {
             // INDEX_NONE

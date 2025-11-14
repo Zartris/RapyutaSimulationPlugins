@@ -28,13 +28,13 @@ void URRCrowdFollowingComponent::SetNavMovementInterface(INavMovementInterface* 
 
 void URRCrowdFollowingComponent::FollowPathSegment(float InDeltaTime)
 {
-    if (IsCrowdSimulationEnabled() || (MovementComp && MovementComp->UseAccelerationForPathFollowing()))
+    if (IsCrowdSimulationEnabled() || (NavMovementInterface.IsValid() && NavMovementInterface->UseAccelerationForPathFollowing()))
     {
         Super::FollowPathSegment(InDeltaTime);
     }
     else
     {
-        if (!Path.IsValid() || MovementComp == nullptr)
+        if (!Path.IsValid() || !NavMovementInterface.IsValid())
         {
             return;
         }
@@ -44,7 +44,7 @@ void URRCrowdFollowingComponent::FollowPathSegment(float InDeltaTime)
 
         // New instantaneous vel
         const float maxSpeed = GetCrowdAgentMaxSpeed();
-        FVector newVelocity = (GetCurrentTargetLocation() - MovementComp->GetActorFeetLocation()) / InDeltaTime;
+        FVector newVelocity = (GetCurrentTargetLocation() - NavMovementInterface->GetFeetLocation()) / InDeltaTime;
         if (FloatMovementComp && (false == FloatMovementComp->UseDecelerationForPathFollowing()))
         {
             // NON-DECELERATION movement: Always keep the vel's magnitude as [maxSpeed]
@@ -59,7 +59,7 @@ void URRCrowdFollowingComponent::FollowPathSegment(float InDeltaTime)
         const bool bNotFollowingLastSegment = (MoveSegmentStartIndex < lastSegmentStartIndex);
 
         PostProcessMove.ExecuteIfBound(this, newVelocity);
-        MovementComp->RequestDirectMove(newVelocity, bNotFollowingLastSegment);
+        NavMovementInterface->RequestDirectMove(newVelocity, bNotFollowingLastSegment);
     }
 }
 

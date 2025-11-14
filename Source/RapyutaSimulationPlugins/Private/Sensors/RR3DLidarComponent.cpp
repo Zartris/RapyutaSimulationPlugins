@@ -420,7 +420,7 @@ FROSPointCloud2 URR3DLidarComponent::GetROS2Data()
     }
     else
     {
-        retValue.Data.SetNum((count + 1) * POINT_STEP, true);
+        retValue.Data.SetNum((count + 1) * POINT_STEP, EAllowShrinking::Yes);
         retValue.Height = 1;
         retValue.Width = count + 1;
         retValue.RowStep = retValue.Data.Num();
